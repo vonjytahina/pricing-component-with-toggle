@@ -281,3 +281,10 @@
 }
 
 }
+
+@media screen and (max-width: 375px) {
+  .container {
+    background: url('images/bg-top.svg') no-repeat, url('images/bg-bottom.svg') no-repeat, var(--neutral-very-light-grayish-blue);
+    background-position: top -10px left 180px, top 100% left 0%, top 0% left 0%;
+  }
+}
