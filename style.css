@@ -1,0 +1,283 @@
+/* import font family*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* colors */
+:root {
+  --primary-linear-gradient: linear-gradient(45deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
+
+  --neutral-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --neutral-light-grayish-blue: hsl(234, 14%, 74%);
+  --neutral-grayish-blue: hsl(233, 13%, 49%);
+  --neutral-dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+/* global style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+/* container */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url('images/bg-top.svg') no-repeat, url('images/bg-bottom.svg') no-repeat, var(--neutral-very-light-grayish-blue);
+  background-position: top 0% left 100%, top 100% left 0%, top 0% left 0%;
+}
+
+.container h1 {
+  margin: 70px 0px 50px 0px;
+  font-size: 30px;
+  color: var(--neutral-grayish-blue);
+}
+
+.container .pricing-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.container .pricing-container .annually,
+.container .pricing-container .monthly {
+  color: var(--neutral-light-grayish-blue);
+}
+
+.container .pricing-container .pricing-toggle {
+  width: 60px;
+  height: 30px;
+  background: var(--primary-linear-gradient);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: all .3s ease-in-out;
+}
+
+.container .pricing-container .pricing-toggle:hover {
+  filter: brightness(130%);
+}
+
+
+.container .pricing-container .toggle-checkbox {
+  display: none;
+}
+
+.container .pricing-container .pricing-toggle .toggle {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--neutral-very-light-grayish-blue);
+  transition: left .3s ease-in-out;
+}
+
+.container .pricing-container .toggle-checkbox:checked+.pricing-toggle .toggle {
+  left: 75%;
+}
+
+.toggle-checkbox:checked+.pricing-toggle .toggle {
+  left: 75%;
+}
+
+.app {
+  margin-top: 65px;
+  width: 1050px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.app>div {
+  width: 33%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 40px 25px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 0px 0px 10px;
+}
+
+.app>div.professional {
+  padding: 63px 25px;
+  height: 500px;
+  background: linear-gradient(100deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
+  border-radius: 10px 10px 10px 10px;
+}
+
+.app>div.master {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.app>div h3 {
+  color: var(--neutral-grayish-blue);
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.app>div.professional h3 {
+  color: var(--neutral-very-light-grayish-blue);
+}
+
+.app>div .top {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--neutral-light-grayish-blue);
+}
+
+.app>div .annual-price,
+.app>div .month-price {
+  color: var(--neutral-dark-grayish-blue);
+  font-size: 50px;
+  position: relative;
+  text-align: center;
+}
+
+.app>div.professional .annual-price,
+.app>div.professional .month-price {
+  color: var(--neutral-very-light-grayish-blue);
+}
+
+.app>div .annual-price::before,
+.app>div .month-price::before {
+  content: "$";
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.app>div .month-price::before {
+  left: 22%;
+}
+
+.month-price {
+  display: none;
+}
+
+.app>div .middle {
+  width: 100%;
+}
+
+.app>div .middle div {
+  padding: 20px 0px;
+  width: 100%;
+  text-align: center;
+  color: var(--neutral-grayish-blue);
+  border-bottom: 1px solid hsl(234, 14%, 90%);
+}
+
+.app>div.professional .middle div {
+  color: var(--neutral-very-light-grayish-blue);
+  border-bottom: 1px solid hsl(234, 14%, 65%);
+}
+
+.app>div .middle div:last-child {
+  border-bottom: 1px solid var(--neutral-light-grayish-blue);
+}
+
+.app>div .learn-more {
+  margin-top: 30px;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-linear-gradient);
+  color: var(--neutral-very-light-grayish-blue);
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.app>div .learn-more:hover {
+  border: 1px solid hsl(237, 63%, 64%);
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.app>div.professional .learn-more {
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.app>div.professional .learn-more:hover {
+  border: 1px solid white;
+  background: hsl(237, 63%, 64%);
+  color: white;
+}
+
+
+.attribution {
+  margin: 20px auto;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  font-size: 11px;
+  color: hsl(228, 45%, 44%);
+}
+
+/* responsive */
+@media screen and (max-width: 1050px) {
+  .container {
+    min-height: 1750px;
+  }
+
+  .app {
+    margin-top: 80px;
+    width: 325px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .app>div, .app>div.professional  {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 40px 25px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .app>div.professional {
+    background: linear-gradient(100deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
+  }
+
+  .app>div.master {
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .app>div .annual-price::before,
+.app>div .month-price::before {
+  left: 13%;
+}
+
+.app>div .month-price::before {
+  left: 20%;
+}
+
+}
